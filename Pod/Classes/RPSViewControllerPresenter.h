@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @class UIViewController;
+@class RACSignal;
 
 @interface RPSViewControllerPresenter : NSObject
 
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController;
 
-- (void)presentViewControllerToTop:(UIViewController *)viewController
-                          animated:(BOOL)animated;
+- (RACSignal *)presentViewControllerToTop:(UIViewController *)viewController
+                                 animated:(BOOL)animated;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "RPSViewControllerPresenter.h"
 #import <UIKit/UIKit.h>
+#import <ReactiveCocoa.h>
 
 SpecBegin(RPSViewControllerPresenter)
 
@@ -32,9 +33,27 @@ before(^{
 describe(@"presentViewControllerToTop:", ^{
     
     __block UIViewController *viewController;
-
+    
+    __block void (^thirdViewControllerPresentCompletionBlock)();
+    __block void (^thirdViewControllerStubBlock) (NSInvocation *invocation) = ^(NSInvocation *invocation){
+        [invocation retainArguments];
+        [invocation getArgument:&thirdViewControllerPresentCompletionBlock
+                        atIndex:4];
+    };
+    
     before(^{
         viewController = [UIViewController new];
+        
+        OCMStub([thirdViewController presentViewController:[OCMArg any]
+                                                  animated:YES
+                                                completion:[OCMArg any]])
+        .andDo(thirdViewControllerStubBlock);
+        
+        OCMStub([thirdViewController presentViewController:[OCMArg any]
+                                                  animated:NO
+                                                completion:[OCMArg any]])
+        .andDo(thirdViewControllerStubBlock);
+        
     });
     
     it(@"should present the passed view controller to the top most presented view controller", ^{
@@ -46,6 +65,21 @@ describe(@"presentViewControllerToTop:", ^{
                                                                               completion:[OCMArg checkWithBlock:^BOOL(id obj) {
             return YES;
         }]]);
+    });
+    
+    it(@"should send next: event on returned RACSignal when presentViewController: completed", ^{
+
+        __block BOOL nextReceived = NO;
+        
+        [[presenter presentViewControllerToTop:viewController
+                                     animated:YES]
+         subscribeNext:^(id x) {
+            nextReceived = YES;
+        }];
+        
+        thirdViewControllerPresentCompletionBlock();
+        
+        expect(nextReceived).to.beTruthy();
     });
     
     context(@"with animation", ^{

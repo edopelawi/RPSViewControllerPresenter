@@ -7,7 +7,9 @@
 //
 
 #import "RPSViewControllerPresenter.h"
+
 #import <UIKit/UIKit.h>
+#import <ReactiveCocoa.h>
 
 @interface RPSViewControllerPresenter ()
 
@@ -28,9 +30,11 @@
     return self;
 }
 
-- (void)presentViewControllerToTop:(UIViewController *)viewController
-                          animated:(BOOL)animated;
+- (RACSignal *)presentViewControllerToTop:(UIViewController *)viewController
+                                 animated:(BOOL)animated;
 {
+    RACReplaySubject *subject = [RACReplaySubject subject];
+    
     UIViewController *topViewController = self.rootViewController;
     
     while (nil != topViewController.presentedViewController) {
@@ -39,7 +43,11 @@
     
     [topViewController presentViewController:viewController
                                     animated:animated
-                                  completion:^{}];
+                                  completion:^{
+                                      [subject sendNext:@YES];
+                                  }];
+    
+    return subject;
 }
 
 @end
