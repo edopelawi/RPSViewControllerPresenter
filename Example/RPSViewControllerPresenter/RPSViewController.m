@@ -8,7 +8,11 @@
 
 #import "RPSViewController.h"
 
+#import <RPSViewControllerPresenter.h>
+
 @interface RPSViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
@@ -17,13 +21,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [self setLabelText];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)setLabelText
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    static NSInteger count = 0;
+    
+    count++;
+    self.label.text = [NSString stringWithFormat:@"This is ViewController number %@.",@(count)];
+}
+
+- (IBAction)presentButtonTapped:(id)sender
+{
+    NSString *className = NSStringFromClass(self.class);
+    RPSViewController *newViewController = [self.storyboard instantiateViewControllerWithIdentifier:className];
+    
+    [[RPSViewControllerPresenter presenter] presentViewControllerToTop:newViewController
+                                                              animated:YES];
+}
+
+- (IBAction)dismissButtonTapped:(id)sender
+{
+    [self dismissViewControllerAnimated:YES
+                             completion:^{}];
 }
 
 @end
