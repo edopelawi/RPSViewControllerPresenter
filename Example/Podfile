@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'RPSViewControllerPresenter', :exclusive => true do
+  pod "RPSViewControllerPresenter", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "RPSViewControllerPresenter", :path => "../"
+
+  pod 'Specta'
+  pod 'Expecta'
+end
