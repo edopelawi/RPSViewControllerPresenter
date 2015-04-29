@@ -5,11 +5,14 @@
 [![License](https://img.shields.io/cocoapods/l/RPSViewControllerPresenter.svg?style=flat)](http://cocoapods.org/pods/RPSViewControllerPresenter)
 [![Platform](https://img.shields.io/cocoapods/p/RPSViewControllerPresenter.svg?style=flat)](http://cocoapods.org/pods/RPSViewControllerPresenter)
 
+
+Present your view controller from anywhere with ease!
+
+![](Images/sample.gif?raw=true)
+
 ## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
+To run the example project, clone the repo and run `pod install` from the Example directory first.
 
 ## Installation
 
@@ -22,7 +25,7 @@ pod "RPSViewControllerPresenter"
 
 ## Author
 
-Ricardo Pramana Suranta, ricardo@icehousecorp.com
+Ricardo Pramana Suranta, ricardo.pramana@gmail.com
 
 ## License
 
