@@ -21,8 +21,6 @@
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
-		8DDE01161AF0B9F1003FEE5C /* RPSViewControllerPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDE01151AF0B9F1003FEE5C /* RPSViewControllerPresenter.m */; };
-		8DDE01171AF0B9F1003FEE5C /* RPSViewControllerPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDE01151AF0B9F1003FEE5C /* RPSViewControllerPresenter.m */; };
 		8DDE01191AF0BA2E003FEE5C /* RPSViewControllerPresenterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDE01181AF0BA2E003FEE5C /* RPSViewControllerPresenterSpec.m */; };
 		B21D7AD8922CDD9D486C365A /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AF12C22E03479DE5BE965E /* libPods-Tests.a */; };
 		FF5C5F0FDB53EC4B9A489218 /* libPods-RPSViewControllerPresenter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 693A2EA602E12F1B33782697 /* libPods-RPSViewControllerPresenter.a */; };
@@ -65,8 +63,6 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		693A2EA602E12F1B33782697 /* libPods-RPSViewControllerPresenter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RPSViewControllerPresenter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AF12C22E03479DE5BE965E /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8DDE01141AF0B9F1003FEE5C /* RPSViewControllerPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RPSViewControllerPresenter.h; path = ../Pod/Classes/RPSViewControllerPresenter.h; sourceTree = "<group>"; };
-		8DDE01151AF0B9F1003FEE5C /* RPSViewControllerPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RPSViewControllerPresenter.m; path = ../Pod/Classes/RPSViewControllerPresenter.m; sourceTree = "<group>"; };
 		8DDE01181AF0BA2E003FEE5C /* RPSViewControllerPresenterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPSViewControllerPresenterSpec.m; sourceTree = "<group>"; };
 		985617F1B84C69111688D885 /* Pods-RPSViewControllerPresenter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPSViewControllerPresenter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RPSViewControllerPresenter/Pods-RPSViewControllerPresenter.debug.xcconfig"; sourceTree = "<group>"; };
 		AA8A961B6D05D8B3878881D2 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
-				8DDE01131AF0B9CA003FEE5C /* Pod Classes */,
 				6003F593195388D20070C39A /* RPSViewControllerPresenter */,
 				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
@@ -198,15 +193,6 @@
 				AD3200EBE3230D84C578B96C /* LICENSE */,
 			);
 			name = "Podspec Metadata";
-			sourceTree = "<group>";
-		};
-		8DDE01131AF0B9CA003FEE5C /* Pod Classes */ = {
-			isa = PBXGroup;
-			children = (
-				8DDE01141AF0B9F1003FEE5C /* RPSViewControllerPresenter.h */,
-				8DDE01151AF0B9F1003FEE5C /* RPSViewControllerPresenter.m */,
-			);
-			name = "Pod Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,7 +364,6 @@
 				6003F59E195388D20070C39A /* RPSAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* RPSViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				8DDE01161AF0B9F1003FEE5C /* RPSViewControllerPresenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +372,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DDE01191AF0BA2E003FEE5C /* RPSViewControllerPresenterSpec.m in Sources */,
-				8DDE01171AF0B9F1003FEE5C /* RPSViewControllerPresenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
