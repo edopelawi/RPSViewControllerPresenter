@@ -22,7 +22,7 @@ pod "RPSViewControllerPresenter"
 
 ## Author
 
-Ricardo Pramana Suranta, ricardo@icehousecorp.com
+Ricardo Pramana Suranta, ricardo.pramana@gmail.com
 
 ## License
 
