@@ -13,6 +13,14 @@
 
 @interface RPSViewControllerPresenter : NSObject
 
+/**
+ *  Factory method of this class. Returns a @p RPSViewControllerPresenter instance
+ *  that initiated with main @p UIWindow 's root @p UIViewController.
+ *
+ *  @return @p RPSViewControllerPresenter instance.
+ */
++ (instancetype)presenter;
+
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController;
 
 /**

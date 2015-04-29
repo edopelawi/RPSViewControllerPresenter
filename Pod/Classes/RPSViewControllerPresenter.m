@@ -19,6 +19,14 @@
 
 @implementation RPSViewControllerPresenter
 
++ (instancetype)presenter
+{
+    id<UIApplicationDelegate> appDelegate = [UIApplication sharedApplication].delegate;
+    UIViewController *rootViewController = [appDelegate window].rootViewController;
+    
+    return [[self alloc] initWithRootViewController:rootViewController];
+}
+
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController
 {
     self = [super init];
